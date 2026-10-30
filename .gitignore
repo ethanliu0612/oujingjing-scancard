@@ -1,0 +1,21 @@
+# 构建产物
+build/
+*.app/
+*.dSYM/
+
+# 图标生成中间文件
+AppIcon.iconset/
+AppIcon-1024.png
+
+# 密钥 / 凭据（任何时候都不要提交）
+credential
+*.credential
+.env
+.env.*
+
+# macOS / 编辑器
+.DS_Store
+.vscode/
+.idea/
+*.xcuserstate
+*.log
