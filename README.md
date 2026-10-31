@@ -40,8 +40,8 @@ macOS 原生菜单栏小工具：全局快捷键 → 拖框 → Vision OCR → �
 需要 macOS 15+ 与 Xcode Command Line Tools（`xcode-select --install`）。
 
 ```bash
-git clone https://github.com/<your-name>/scancard.git
-cd scancard
+git clone https://github.com/ethanliu0612/oujingjing-scancard.git
+cd oujingjing-scancard
 ./build.sh                 # 编译并组装 扫描卡.app
 open "build/扫描卡.app"     # 首次启动
 ```
