@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: swift --version && sw_vers
+
+      - name: Build app bundle
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Verify signature
+        run: codesign --verify --deep --strict "build/扫描卡.app"
+
+      - name: Upload .app
+        uses: actions/upload-artifact@v4
+        with:
+          name: ScanCard-app
+          path: build/扫描卡.app
+          if-no-files-found: error
